@@ -1,110 +1,123 @@
-/* ===== RESET & GLOBAL ===== */
+// RESETEO DE ESTILOS POR DEFECTO DEL NAVEGADOR.
+// Elimina márgenes, rellenos y cambia el modelo de caja para que el ancho incluya bordes y rellenos.
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;           // Quita el margen exterior de todos los elementos.
+    padding: 0;          // Quita el relleno interior de todos los elementos.
+    box-sizing: border-box; // El ancho total = contenido + border + padding (no se desborda).
 }
 
+// ESTILOS GENERALES DEL CUERPO DE LA PÁGINA.
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #0a0a0a;
-    color: #e0e0e0;
-    line-height: 1.6;
-    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;  // Fuente principal: Poppins (moderna y legible).
+    background-color: #0a0a0a;           // Fondo casi negro.
+    color: #e0e0e0;                      // Texto gris claro (buen contraste sin ser blanco puro).
+    line-height: 1.6;                    // Altura de línea: 1.6 veces el tamaño de la fuente (facilita la lectura).
+    scroll-behavior: smooth;             // Desplazamiento suave al hacer clic en enlaces internos (como #inicio).
 }
 
+// CONTENEDOR PRINCIPAL PARA CENTRAR Y LIMITAR EL ANCHO DEL CONTENIDO.
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    max-width: 1200px;    // Ancho máximo de 1200 píxeles (no crece más).
+    margin: 0 auto;       // Centrado horizontal automático.
+    padding: 0 20px;      // Relleno lateral de 20px para que en móviles no toque los bordes.
 }
 
-/* ===== TIPOGRAFÍA ===== */
+// TIPOGRAFÍA PARA TÍTULOS (h1, h2, h3, h4).
 h1, h2, h3, h4 {
-    font-weight: 700;
-    letter-spacing: -0.5px;
+    font-weight: 700;           // Negrita (peso 700).
+    letter-spacing: -0.5px;     // Espaciado entre letras ligeramente reducido (estilo moderno).
 }
 
+// ESTILO ESPECIAL PARA EL TÍTULO PRINCIPAL (h1).
 h1 {
-    font-size: 3.5rem;
-    background: linear-gradient(135deg, #00ffaa, #00ccff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    font-size: 3.5rem;          // Tamaño muy grande (3.5 veces la fuente base del navegador).
+    background: linear-gradient(135deg, #00ffaa, #00ccff); // Degradado diagonal de verde neón a cian.
+    -webkit-background-clip: text;  // Recorta el fondo para que solo se vea donde hay texto (WebKit).
+    background-clip: text;          // Lo mismo pero estándar.
+    color: transparent;             // El texto es transparente para que se vea el degradado.
 }
 
+// TÍTULOS DE SECCIÓN (como "Proyectos destacados").
 .section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    position: relative;
-    display: inline-block;
-    width: 100%;
+    font-size: 2.5rem;          // Tamaño grande, pero menor que el h1.
+    text-align: center;         // Centrado.
+    margin-bottom: 3rem;        // Margen inferior para separar del contenido siguiente.
+    position: relative;         // Necesario para que la línea decorativa (::after) se posicione respecto a este elemento.
+    display: inline-block;      // Para que la línea decorativa se centre según el ancho del texto.
+    width: 100%;                // Ocupa todo el ancho del contenedor padre para permitir centrado.
 }
 
+// LÍNEA DECORATIVA DEBAJO DEL TÍTULO DE SECCIÓN.
 .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(90deg, #00ffaa, #00ccff);
-    border-radius: 3px;
+    content: '';                // Crea un elemento pseudo vacío (sin contenido textual).
+    position: absolute;         // Se posiciona de forma absoluta respecto a .section-title.
+    bottom: -10px;              // Se coloca 10 píxeles por debajo del borde inferior del título.
+    left: 50%;                  // Lo mueve al 50% del ancho del contenedor.
+    transform: translateX(-50%); // Lo centra perfectamente (desplaza hacia la izquierda la mitad de su ancho).
+    width: 80px;                // Ancho de la línea.
+    height: 3px;                // Alto de la línea.
+    background: linear-gradient(90deg, #00ffaa, #00ccff); // Degradado horizontal.
+    border-radius: 3px;         // Bordes redondeados.
 }
 
-/* ===== NAVBAR (efecto vidrio) ===== */
+// BARRA DE NAVEGACIÓN (FIJA Y CON EFECTO VIDRIO).
 .navbar {
-    background: rgba(10, 10, 10, 0.95);
-    backdrop-filter: blur(10px);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(0, 255, 170, 0.2);
+    background: rgba(10, 10, 10, 0.95); // Fondo negro con 95% de opacidad (casi sólido).
+    backdrop-filter: blur(10px);        // Aplica un desenfoque de 10px al fondo detrás de la barra (efecto cristal).
+    position: fixed;                   // Fija la barra en la parte superior al hacer scroll.
+    width: 100%;                       // Ocupa todo el ancho de la ventana.
+    top: 0;                            // Se pega al borde superior.
+    z-index: 1000;                     // Se superpone a otros elementos (valor alto).
+    border-bottom: 1px solid rgba(0, 255, 170, 0.2); // Borde inferior tenue de color verde neón.
 }
 
+// CONTENEDOR INTERNO DE LA BARRA DE NAVEGACIÓN.
 .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    display: flex;               // Activa flexbox.
+    justify-content: space-between; // Distribuye el espacio: logo a la izquierda, menú a la derecha.
+    align-items: center;         // Centra verticalmente los elementos.
+    padding: 1rem 2rem;          // Relleno superior/inferior 1rem, laterales 2rem.
+    max-width: 1200px;           // Mismo ancho máximo que el contenedor general.
+    margin: 0 auto;              // Centrado horizontal.
 }
 
+// LOGOTIPO (muestra "<C.N.T/>" con estilo de código).
 .logo {
-    font-family: 'Fira Code', monospace;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #00ffaa;
-    text-decoration: none;
-    letter-spacing: -1px;
+    font-family: 'Fira Code', monospace; // Fuente monoespaciada (parece código).
+    font-size: 1.8rem;                  // Tamaño grande.
+    font-weight: 700;                   // Negrita.
+    color: #00ffaa;                     // Color verde neón.
+    text-decoration: none;              // Sin subrayado.
+    letter-spacing: -1px;               // Espaciado reducido entre letras.
 }
 
+// LISTA DEL MENÚ (contiene los enlaces).
 .nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
+    display: flex;          // Los elementos se colocan en fila horizontal.
+    list-style: none;       // Elimina las viñetas (puntos) de la lista.
+    gap: 2rem;              // Espacio de 2rem entre cada elemento del menú.
 }
 
+// ENLACES INDIVIDUALES DEL MENÚ.
 .nav-link {
-    color: #e0e0e0;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
+    color: #e0e0e0;         // Color gris claro.
+    text-decoration: none;  // Sin subrayado.
+    font-weight: 500;       // Seminegrita.
+    transition: 0.3s;       // Transición suave para cambios de color.
 }
 
+// EFECTO AL PASAR EL RATÓN SOBRE UN ENLACE DEL MENÚ.
 .nav-link:hover {
-    color: #00ffaa;
+    color: #00ffaa;         // Cambia a verde neón.
 }
 
+// ÍCONO DE HAMBURGUESA (se muestra solo en móviles, oculto en escritorio).
 .hamburger {
-    display: none;
-    cursor: pointer;
+    display: none;          // Por defecto no se muestra.
+    cursor: pointer;        // El cursor cambia a mano (indica que es clickeable).
 }
 
+// CADA UNA DE LAS TRES BARRAS DEL MENÚ HAMBURGUESA.
 .bar {
     display: block;
     width: 25px;
@@ -114,45 +127,50 @@ h1 {
     transition: 0.3s;
 }
 
-/* ===== HERO (PORTADA) estilo terminal ===== */
+// SECCIÓN HERO (PORTADA PRINCIPAL, ESTILO TERMINAL).
 .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    background: radial-gradient(circle at 10% 20%, rgba(0, 255, 170, 0.05), #0a0a0a);
-    padding-top: 80px;
+    min-height: 100vh;                  // Altura mínima: toda la pantalla (100% del viewport).
+    display: flex;                      // Usa flexbox.
+    align-items: center;                // Centra el contenido verticalmente.
+    background: radial-gradient(circle at 10% 20%, rgba(0, 255, 170, 0.05), #0a0a0a); // Degradado radial sutil.
+    padding-top: 80px;                  // Espacio superior para que no quede oculto bajo la barra fija.
 }
 
+// CONTENEDOR DENTRO DE HERO (para organizar texto y código).
 .hero .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; // Separa el texto del bloque de código.
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap;                // En móviles, se apilan en columna.
     gap: 2rem;
 }
 
+// CAJA QUE CONTIENE EL TEXTO (nombre, descripción, botones).
 .hero-content {
-    flex: 1;
+    flex: 1;          // Ocupa todo el espacio disponible (proporcional a .hero-code).
 }
 
+// INSIGNIA (Java Full-Stack Developer).
 .badge {
-    background: rgba(0, 255, 170, 0.2);
-    color: #00ffaa;
+    background: rgba(0, 255, 170, 0.2); // Fondo verde muy tenue y translúcido.
+    color: #00ffaa;                     // Texto verde neón.
     padding: 0.3rem 1rem;
-    border-radius: 30px;
+    border-radius: 30px;                // Bordes muy redondeados (forma de píldora).
     font-size: 0.8rem;
     font-weight: 600;
     display: inline-block;
     margin-bottom: 1rem;
-    border: 1px solid rgba(0, 255, 170, 0.5);
+    border: 1px solid rgba(0, 255, 170, 0.5); // Borde verde suave.
 }
 
+// FRASE DESTACADA (debajo del nombre).
 .tagline {
     font-size: 1.2rem;
     margin: 1rem 0;
-    color: #b0b0b0;
+    color: #b0b0b0;   // Gris ligeramente más oscuro que el texto normal.
 }
 
+// CONTENEDOR DE LOS BOTONES (Ver proyectos, Contacto).
 .hero-buttons {
     margin: 2rem 0;
     display: flex;
@@ -160,38 +178,44 @@ h1 {
     flex-wrap: wrap;
 }
 
+// ESTILO BASE PARA CUALQUIER BOTÓN.
 .btn {
     padding: 0.8rem 1.8rem;
-    border-radius: 40px;
+    border-radius: 40px;      // Bordes muy redondeados.
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s;
-    display: inline-flex;
+    display: inline-flex;     // Para que el texto y el ícono se alineen horizontalmente.
     align-items: center;
     gap: 8px;
 }
 
+// BOTÓN PRIMARIO (Ver proyectos).
 .btn-primary {
     background: linear-gradient(135deg, #00ffaa, #00ccff);
-    color: #0a0a0a;
+    color: #0a0a0a;           // Texto negro para contraste.
     border: none;
 }
 
+// EFECTO HOVER DEL BOTÓN PRIMARIO.
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 255, 170, 0.3);
+    transform: translateY(-3px);   // Se eleva ligeramente.
+    box-shadow: 0 10px 20px rgba(0, 255, 170, 0.3); // Sombra verde neón.
 }
 
+// BOTÓN SECUNDARIO (Contacto).
 .btn-secondary {
-    background: transparent;
+    background: transparent;    // Fondo transparente.
     border: 1px solid #00ffaa;
     color: #00ffaa;
 }
 
+// EFECTO HOVER DEL BOTÓN SECUNDARIO.
 .btn-secondary:hover {
-    background: #00ffaa20;
+    background: #00ffaa20;   // Fondo verde muy tenue (20% de opacidad).
 }
 
+// CONTENEDOR DE INFORMACIÓN DE CONTACTO (correo, redes).
 .hero-contact {
     margin-top: 1rem;
     font-size: 0.9rem;
@@ -201,6 +225,7 @@ h1 {
     margin: 0.5rem 0;
 }
 
+// ENLACES DE REDES SOCIALES (GitHub, LinkedIn, correo).
 .social-links {
     margin-top: 1rem;
     display: flex;
@@ -213,74 +238,83 @@ h1 {
     transition: 0.3s;
 }
 
+// EFECTO HOVER EN REDES SOCIALES.
 .social-links a:hover {
-    color: #00ffaa;
+    color: #00ffaa;   // Cambian a verde neón.
 }
 
+// BLOQUE DE CÓDIGO (estilo terminal).
 .hero-code {
-    flex: 1;
+    flex: 1;                      // Ocupa el mismo espacio que .hero-content.
     background: #111;
     padding: 1.5rem;
     border-radius: 12px;
-    border-left: 4px solid #00ffaa;
+    border-left: 4px solid #00ffaa; // Línea vertical izquierda verde.
     font-family: 'Fira Code', monospace;
     font-size: 0.9rem;
-    overflow-x: auto;
+    overflow-x: auto;               // Si el código es muy ancho, permite scroll horizontal.
 }
 
+// TEXTO DENTRO DEL BLOQUE DE CÓDIGO.
 .hero-code code {
     color: #00ffaa;
 }
 
-/* ===== FOTO PERSONAL ===== */
+// SECCIÓN DE LA FOTO PERSONAL (debajo del hero).
 .personal-photo {
     padding: 3rem 0 2rem 0;
-    background: linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 100%);
+    background: linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 100%); // Degradado vertical descendente.
 }
 
+// TARJETA QUE CONTIENE LA FOTO Y EL TEXTO.
 .photo-card {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
-    background: rgba(20, 20, 30, 0.6);
-    backdrop-filter: blur(8px);
+    background: rgba(20, 20, 30, 0.6);   // Fondo semitransparente oscuro.
+    backdrop-filter: blur(8px);          // Efecto vidrio (desenfoque).
     border-radius: 32px;
     padding: 2rem;
     border: 1px solid rgba(0, 255, 170, 0.3);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+// EFECTO HOVER EN LA TARJETA DE FOTO.
 .photo-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px);               // Se eleva.
     box-shadow: 0 20px 35px rgba(0, 255, 170, 0.2);
-    border-color: #00ffaa;
+    border-color: #00ffaa;                     // Borde más brillante.
 }
 
+// MARCO CIRCULAR DE LA FOTO.
 .photo-frame {
-    flex-shrink: 0;
+    flex-shrink: 0;           // Evita que se encoja si el contenedor es pequeño.
     width: 220px;
     height: 220px;
-    border-radius: 50%;
-    overflow: hidden;
+    border-radius: 50%;       // Hace el marco perfectamente circular.
+    overflow: hidden;         // Oculta cualquier parte de la imagen que sobresalga.
     border: 3px solid #00ffaa;
     box-shadow: 0 0 20px rgba(0, 255, 170, 0.5);
     transition: 0.3s;
 }
 
+// EFECTO HOVER EN EL MARCO.
 .photo-frame:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 30px #00ffaa;
+    transform: scale(1.02);        // Aumenta ligeramente el tamaño.
+    box-shadow: 0 0 30px #00ffaa;  // Sombra más intensa.
 }
 
+// IMAGEN DE PERFIL DENTRO DEL MARCO.
 .profile-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;    // La imagen se ajusta para cubrir el marco sin deformarse (puede recortarse).
     display: block;
 }
 
+// TEXTO JUNTO A LA FOTO.
 .photo-caption {
     max-width: 400px;
     text-align: center;
@@ -300,6 +334,7 @@ h1 {
     margin-bottom: 1rem;
 }
 
+// REDES SOCIALES DENTRO DE LA TARJETA DE FOTO.
 .photo-social {
     display: flex;
     gap: 1.2rem;
@@ -317,33 +352,37 @@ h1 {
     transform: translateY(-3px);
 }
 
-/* ===== PROYECTOS ===== */
+// SECCIÓN DE PORTAFOLIO (PROYECTOS DESTACADOS).
 .portfolio {
     padding: 6rem 0;
     background: #0a0a0a;
 }
 
+// CUADRÍCULA QUE CONTIENE LAS TARJETAS DE PROYECTO.
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    display: grid;                                      // Usa CSS Grid.
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); // Columnas flexibles: mínimo 320px, máximo 1 fracción.
+    gap: 2rem;                                          // Espacio entre tarjetas.
 }
 
+// TARJETA DE PROYECTO INDIVIDUAL.
 .project-card {
     background: rgba(20, 20, 30, 0.7);
     backdrop-filter: blur(5px);
     border-radius: 16px;
-    overflow: hidden;
+    overflow: hidden;               // Para que la imagen no sobresalga de las esquinas redondeadas.
     border: 1px solid rgba(0, 255, 170, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+// EFECTO HOVER EN TARJETA DE PROYECTO.
 .project-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 30px rgba(0, 255, 170, 0.1);
     border-color: #00ffaa;
 }
 
+// CONTENEDOR DE LA IMAGEN DEL PROYECTO.
 .project-img img {
     width: 100%;
     height: 200px;
@@ -351,6 +390,7 @@ h1 {
     display: block;
 }
 
+// CONTENEDOR DE LA INFORMACIÓN DEL PROYECTO.
 .project-info {
     padding: 1.5rem;
 }
@@ -360,6 +400,7 @@ h1 {
     margin-bottom: 0.5rem;
 }
 
+// ETIQUETAS DE TECNOLOGÍAS USADAS EN EL PROYECTO.
 .tech-stack {
     margin: 0.8rem 0;
     display: flex;
@@ -375,6 +416,7 @@ h1 {
     color: #00ffaa;
 }
 
+// ENLACES DEL PROYECTO (Demo, Código).
 .project-links {
     display: flex;
     gap: 1rem;
@@ -394,29 +436,33 @@ h1 {
     color: #00ffaa;
 }
 
-/* ===== ABOUT ===== */
+// SECCIÓN "ACERCA DE MÍ".
 .about {
     padding: 6rem 0;
     background: #0f0f0f;
 }
 
+// CONTENEDOR FLEX PARA TEXTO Y ESTADÍSTICAS.
 .about-content {
     display: flex;
     gap: 3rem;
     flex-wrap: wrap;
 }
 
+// TEXTO DESCRIPTIVO.
 .about-text {
-    flex: 2;
+    flex: 2;      // Ocupa el doble de espacio que .about-stats.
 }
 
+// CONTENEDOR DE LAS ESTADÍSTICAS.
 .about-stats {
-    flex: 1;
+    flex: 1;      // Ocupa 1 parte del espacio.
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
+// CADA TARJETA DE ESTADÍSTICA.
 .stat {
     background: #111;
     padding: 1rem;
@@ -432,17 +478,19 @@ h1 {
     display: block;
 }
 
-/* ===== CV ===== */
+// SECCIÓN DEL CURRÍCULUM VITAE (CV).
 .cv {
     padding: 6rem 0;
 }
 
+// CUADRÍCULA DE DOS COLUMNAS PARA EL CV.
 .cv-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1.5fr;  // Columna izquierda más pequeña, derecha más grande.
     gap: 2rem;
 }
 
+// COLUMNAS DEL CV (ambas con estilo similar).
 .cv-left, .cv-right {
     background: #111;
     padding: 2rem;
@@ -450,6 +498,7 @@ h1 {
     border: 1px solid #00ffaa20;
 }
 
+// CONTENEDOR DE LAS HABILIDADES (etiquetas).
 .skills {
     display: flex;
     flex-wrap: wrap;
@@ -465,6 +514,7 @@ h1 {
     color: #00ffaa;
 }
 
+// CADA EXPERIENCIA LABORAL.
 .experience-item {
     margin-bottom: 1.5rem;
     border-left: 2px solid #00ffaa;
@@ -475,17 +525,19 @@ h1 {
     margin-bottom: 0.2rem;
 }
 
+// BOTÓN PARA DESCARGAR EL CV (PDF).
 .download-cv {
     display: inline-block;
     margin-top: 1.5rem;
 }
 
-/* ===== BLOG ===== */
+// SECCIÓN DEL BLOG.
 .blog {
     padding: 6rem 0;
     background: #0f0f0f;
 }
 
+// ENTRADA DEL BLOG.
 .blog-post {
     background: #111;
     border-radius: 20px;
@@ -493,16 +545,18 @@ h1 {
     border: 1px solid #00ffaa30;
 }
 
+// FECHA DE LA PUBLICACIÓN.
 .post-date {
     color: #00ffaa;
     margin: 0.5rem 0 1rem;
 }
 
+// CONTENIDO DEL POST.
 .post-content p {
     margin-bottom: 1rem;
 }
 
-/* ===== SECCIÓN WEB3 ===== */
+// SECCIÓN ESPECIAL PARA WEB3 (interés personal).
 .web3-section {
     background: #0a0a0a;
     padding: 3rem 0;
@@ -511,6 +565,7 @@ h1 {
     border-bottom: 1px solid #00ffaa30;
 }
 
+// ENLACES A REDES SOCIALES DE WEB3.
 .web3-links {
     display: flex;
     justify-content: center;
@@ -534,12 +589,14 @@ h1 {
     transform: translateY(-3px);
 }
 
+// NOTA ACLARATORIA (redes solo para Web3).
 .web3-note {
     font-size: 0.8rem;
     color: #888;
     margin-top: 1rem;
 }
 
+// SUBTÍTULO DE SECCIÓN (debajo del título principal).
 .section-subtitle {
     text-align: center;
     color: #ccc;
@@ -547,7 +604,7 @@ h1 {
     font-size: 0.95rem;
 }
 
-/* ===== FOOTER ===== */
+// PIE DE PÁGINA (FOOTER).
 footer {
     background: #050505;
     text-align: center;
@@ -555,16 +612,16 @@ footer {
     border-top: 1px solid #00ffaa20;
 }
 
-/* ===== RESPONSIVE ===== */
+// ESTILOS RESPONSIVOS (SOLO PARA PANTALLAS DE 768px O MENOS, ES DECIR, MÓVILES Y TABLETS PEQUEÑAS).
 @media (max-width: 768px) {
     .hamburger {
-        display: block;
+        display: block;           // Muestra el ícono de hamburguesa.
     }
     .nav-menu {
         position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
+        left: -100%;             // Oculta el menú fuera de la pantalla (a la izquierda).
+        top: 70px;               // Debajo de la barra de navegación.
+        flex-direction: column; // Los enlaces se apilan verticalmente.
         background: #0a0a0a;
         width: 100%;
         text-align: center;
@@ -573,14 +630,14 @@ footer {
         padding: 1rem 0;
     }
     .nav-menu.active {
-        left: 0;
+        left: 0;                 // Cuando el usuario hace clic, el menú se desliza hacia adentro.
     }
     .nav-link {
         padding: 1rem;
         display: block;
     }
     .hero .container {
-        flex-direction: column;
+        flex-direction: column;  // El hero se apila: texto arriba, código abajo.
         text-align: center;
     }
     .hero-buttons {
@@ -590,7 +647,7 @@ footer {
         width: 100%;
     }
     .cv-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; // El CV pasa a una sola columna.
     }
     .section-title {
         font-size: 2rem;
