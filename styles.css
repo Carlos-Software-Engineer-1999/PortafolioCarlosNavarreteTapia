@@ -1,5 +1,509 @@
-/* Sección de hobby Web3 */
-.hobby-section {
+/* ===== RESET & GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== TIPOGRAFÍA ===== */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, #00ffaa, #00ccff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #00ffaa, #00ccff);
+    border-radius: 3px;
+}
+
+/* ===== NAVBAR (efecto vidrio) ===== */
+.navbar {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 255, 170, 0.2);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #00ffaa;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #00ffaa;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: #e0e0e0;
+    transition: 0.3s;
+}
+
+/* ===== HERO (PORTADA) estilo terminal ===== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at 10% 20%, rgba(0, 255, 170, 0.05), #0a0a0a);
+    padding-top: 80px;
+}
+
+.hero .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.badge {
+    background: rgba(0, 255, 170, 0.2);
+    color: #00ffaa;
+    padding: 0.3rem 1rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0, 255, 170, 0.5);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: #b0b0b0;
+}
+
+.hero-buttons {
+    margin: 2rem 0;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.8rem 1.8rem;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #00ffaa, #00ccff);
+    color: #0a0a0a;
+    border: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 255, 170, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid #00ffaa;
+    color: #00ffaa;
+}
+
+.btn-secondary:hover {
+    background: #00ffaa20;
+}
+
+.hero-contact {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.hero-contact p {
+    margin: 0.5rem 0;
+}
+
+.social-links {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: #e0e0e0;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #00ffaa;
+}
+
+.hero-code {
+    flex: 1;
+    background: #111;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid #00ffaa;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+}
+
+.hero-code code {
+    color: #00ffaa;
+}
+
+/* ===== FOTO PERSONAL ===== */
+.personal-photo {
+    padding: 3rem 0 2rem 0;
+    background: linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 100%);
+}
+
+.photo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    background: rgba(20, 20, 30, 0.6);
+    backdrop-filter: blur(8px);
+    border-radius: 32px;
+    padding: 2rem;
+    border: 1px solid rgba(0, 255, 170, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 35px rgba(0, 255, 170, 0.2);
+    border-color: #00ffaa;
+}
+
+.photo-frame {
+    flex-shrink: 0;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #00ffaa;
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.5);
+    transition: 0.3s;
+}
+
+.photo-frame:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px #00ffaa;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-caption {
+    max-width: 400px;
+    text-align: center;
+}
+
+.photo-caption h3 {
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, #00ffaa, #00ccff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.photo-caption p {
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.photo-social {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+.photo-social a {
+    color: #e0e0e0;
+    font-size: 1.6rem;
+    transition: 0.3s;
+}
+
+.photo-social a:hover {
+    color: #00ffaa;
+    transform: translateY(-3px);
+}
+
+/* ===== PROYECTOS ===== */
+.portfolio {
+    padding: 6rem 0;
+    background: #0a0a0a;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: rgba(20, 20, 30, 0.7);
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 255, 170, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 255, 170, 0.1);
+    border-color: #00ffaa;
+}
+
+.project-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.tech-stack {
+    margin: 0.8rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+}
+
+.tech-stack span {
+    background: #222;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    color: #00ffaa;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.project-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.project-links a:hover {
+    color: #00ffaa;
+}
+
+/* ===== ABOUT ===== */
+.about {
+    padding: 6rem 0;
+    background: #0f0f0f;
+}
+
+.about-content {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-stats {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.stat {
+    background: #111;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #00ffaa30;
+}
+
+.stat span {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #00ffaa;
+    display: block;
+}
+
+/* ===== CV ===== */
+.cv {
+    padding: 6rem 0;
+}
+
+.cv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+}
+
+.cv-left, .cv-right {
+    background: #111;
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid #00ffaa20;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.skills span {
+    background: #1a1a1a;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    color: #00ffaa;
+}
+
+.experience-item {
+    margin-bottom: 1.5rem;
+    border-left: 2px solid #00ffaa;
+    padding-left: 1rem;
+}
+
+.experience-item h4 {
+    margin-bottom: 0.2rem;
+}
+
+.download-cv {
+    display: inline-block;
+    margin-top: 1.5rem;
+}
+
+/* ===== BLOG ===== */
+.blog {
+    padding: 6rem 0;
+    background: #0f0f0f;
+}
+
+.blog-post {
+    background: #111;
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid #00ffaa30;
+}
+
+.post-date {
+    color: #00ffaa;
+    margin: 0.5rem 0 1rem;
+}
+
+.post-content p {
+    margin-bottom: 1rem;
+}
+
+/* ===== SECCIÓN WEB3 ===== */
+.web3-section {
     background: #0a0a0a;
     padding: 3rem 0;
     text-align: center;
@@ -7,7 +511,7 @@
     border-bottom: 1px solid #00ffaa30;
 }
 
-.hobby-links {
+.web3-links {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
@@ -15,7 +519,7 @@
     margin: 2rem 0;
 }
 
-.hobby-links a {
+.web3-links a {
     color: #00ffaa;
     text-decoration: none;
     font-size: 1.2rem;
@@ -25,12 +529,12 @@
     transition: 0.3s;
 }
 
-.hobby-links a:hover {
+.web3-links a:hover {
     background: #00ffaa20;
     transform: translateY(-3px);
 }
 
-.hobby-note {
+.web3-note {
     font-size: 0.8rem;
     color: #888;
     margin-top: 1rem;
@@ -41,4 +545,64 @@
     color: #ccc;
     margin-bottom: 2rem;
     font-size: 0.95rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #050505;
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid #00ffaa20;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: #0a0a0a;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        gap: 0;
+        padding: 1rem 0;
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .nav-link {
+        padding: 1rem;
+        display: block;
+    }
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .hero-code {
+        width: 100%;
+    }
+    .cv-grid {
+        grid-template-columns: 1fr;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    .photo-frame {
+        width: 160px;
+        height: 160px;
+    }
+    .photo-caption h3 {
+        font-size: 1.4rem;
+    }
 }
