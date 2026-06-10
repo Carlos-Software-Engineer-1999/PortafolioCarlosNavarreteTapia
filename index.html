@@ -1,19 +1,257 @@
-<!-- SECCIÓN FOTO PERSONAL (destacada) -->
-<section class="personal-photo">
-    <div class="container">
-        <div class="photo-card">
-            <div class="photo-frame">
-                <img src="assets/images/mi-foto.jpg" alt="Carlos Navarrete Tapia - foto profesional" class="profile-img">
-            </div>
-            <div class="photo-caption">
-                <h3>Carlos Navarrete Tapia</h3>
-                <p>Software Engineer | Apasionado por el código limpio y la innovación tecnológica.</p>
-                <div class="photo-social">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fas fa-envelope"></i></a>
-                </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Carlos Navarrete | Software Engineer | Java Full-Stack</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">&lt;C.N.T/&gt;</a>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#portafolio" class="nav-link">Portafolio</a></li>
+                <li><a href="#acerca" class="nav-link">Acerca</a></li>
+                <li><a href="#cv" class="nav-link">CV</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
-    </div>
-</section>
+    </nav>
+
+    <main>
+        <!-- HERO -->
+        <section id="inicio" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <span class="badge">Java Full-Stack Developer</span>
+                    <h1>Carlos Navarrete Tapia</h1>
+                    <p class="tagline">Construyo soluciones web escalables con enfoque en UX/UI y código limpio.</p>
+                    <div class="hero-buttons">
+                        <a href="#portafolio" class="btn btn-primary">Ver proyectos <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contacto" class="btn btn-secondary">Contacto <i class="fas fa-envelope"></i></a>
+                    </div>
+                    <div class="hero-contact">
+                        <p><i class="fas fa-phone-alt"></i> +52 5521813904</p>
+                        <p><i class="fas fa-envelope"></i> navarreteatapiacarlos@gmail.com</p>
+                        <div class="social-links">
+                            <a href="https://github.com/Carlos-Software-Engineer-1999" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/carlos-navarrete-tapia-6367a133a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:navarreteatapiacarlos@gmail.com"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-code">
+                    <pre><code>System.out.println("Hello, World!");</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOTO PERSONAL -->
+        <section class="personal-photo">
+            <div class="container">
+                <div class="photo-card">
+                    <div class="photo-frame">
+                        <img src="mi-foto.jpg" alt="Carlos Navarrete Tapia - foto profesional" class="profile-img">
+                    </div>
+                    <div class="photo-caption">
+                        <h3>Carlos Navarrete Tapia</h3>
+                        <p>Software Engineer | Apasionado por el diseño UX/UI y el código bien estructurado.</p>
+                        <div class="photo-social">
+                            <a href="https://github.com/Carlos-Software-Engineer-1999" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/carlos-navarrete-tapia-6367a133a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:navarreteatapiacarlos@gmail.com"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTAFOLIO (3 proyectos Web3 como hobby) -->
+        <section id="portafolio" class="portfolio">
+            <div class="container">
+                <h2 class="section-title">Proyectos destacados (Web3 como hobby)</h2>
+                <p class="section-subtitle">Los siguientes proyectos son personales, parte de mi interés por la tecnología descentralizada como pasatiempo. Mi enfoque profesional principal es el desarrollo Java Full-Stack con énfasis en UX/UI.</p>
+                <div class="projects-grid">
+                    <!-- Orbe -->
+                    <div class="project-card">
+                        <div class="project-img"><img src="proyecto1.jpg" alt="Orbe - Remesas Web3" onerror="this.src='https://placehold.co/600x400/1a1a1a/00ffaa?text=Orbe'"></div>
+                        <div class="project-info">
+                            <h3>Orbe – Remesas Web3</h3>
+                            <p>Plataforma descentralizada para envío de remesas usando blockchain. Participación en Mobil3 Hackathon CDMX 2025. (Proyecto hobby)</p>
+                            <div class="tech-stack">Solidity | Web3j | Java | Ethereum | React</div>
+                            <div class="project-links">
+                                <a href="https://orbe-mu.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                <a href="https://github.com/Carlos-Software-Engineer-1999" target="_blank"><i class="fab fa-github"></i> Código</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Eco Eeelien -->
+                    <div class="project-card">
+                        <div class="project-img"><img src="proyecto2.jpg" alt="Eco Eeelien - Remesas en Monad" onerror="this.src='https://placehold.co/600x400/1a1a1a/00ccff?text=Eco+Eeelien'"></div>
+                        <div class="project-info">
+                            <h3>Eco Eeelien</h3>
+                            <p>Plataforma de remesas basada en blockchain Monad. Ganador en Monad Blitz Ciudad de México #1 (2026). (Proyecto hobby)</p>
+                            <div class="tech-stack">Java | Solidity | Web3 | Monad | IPFS</div>
+                            <div class="project-links">
+                                <a href="https://eco-eeelien-monad.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                <a href="https://github.com/Carlos-Software-Engineer-1999" target="_blank"><i class="fab fa-github"></i> Código</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carechain -->
+                    <div class="project-card">
+                        <div class="project-img"><img src="proyecto3.jpg" alt="Carechain - Salud en Blockchain" onerror="this.src='https://placehold.co/600x400/1a1a1a/ffaa00?text=Carechain'"></div>
+                        <div class="project-info">
+                            <h3>Carechain</h3>
+                            <p>Plataforma para gestión de historiales médicos usando blockchain. (Proyecto hobby)</p>
+                            <div class="tech-stack">Java | Spring Boot | Solidity | Ethereum | React</div>
+                            <div class="project-links">
+                                <a href="https://carechain.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                <a href="https://github.com/Carlos-Software-Engineer-1999" target="_blank"><i class="fab fa-github"></i> Código</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACERCA DE MÍ -->
+        <section id="acerca" class="about">
+            <div class="container">
+                <h2 class="section-title">Acerca de mí</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Soy Ingeniero de Software egresado de la UAEH, actualmente especializándome como desarrollador Java Full Stack en Generation México. Mi enfoque profesional se centra en el <strong>desarrollo web con énfasis en UX/UI</strong>, creando interfaces intuitivas y eficientes.</p>
+                        <p>Además, tengo una curiosidad profesional por la <strong>ciberseguridad web</strong> (aunque aún sin experiencia laboral) y, como pasatiempo, exploro tecnologías descentralizadas como <strong>Web3 y blockchain</strong> (no es mi área de búsqueda laboral). Me apasiona el aprendizaje continuo, el trabajo en equipo y generar impacto real mediante código limpio y bien diseñado.</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat"><span>+3</span> Proyectos destacados</div>
+                        <div class="stat"><span>3</span> Hackathons internacionales (hobby)</div>
+                        <div class="stat"><span>+2 años</span> Experiencia en sector público</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CV -->
+        <section id="cv" class="cv">
+            <div class="container">
+                <h2 class="section-title">Curriculum Vitae</h2>
+                <div class="cv-grid">
+                    <div class="cv-left">
+                        <h3>Habilidades técnicas (profesionales)</h3>
+                        <div class="skills">
+                            <span>Java</span><span>Spring Boot</span><span>Spring Data JPA</span><span>REST APIs</span>
+                            <span>HTML5/CSS3</span><span>JavaScript</span><span>Git & GitHub</span><span>MySQL</span>
+                            <span>SQL Server</span><span>Docker</span><span>Node.js</span><span>Postman</span>
+                        </div>
+                        <h3>Especialidades</h3>
+                        <div class="skills">
+                            <span>UX/UI Design</span><span>Desarrollo Web Full-Stack</span>
+                        </div>
+                        <h3>Intereses profesionales</h3>
+                        <div class="skills">
+                            <span>Ciberseguridad web (en aprendizaje)</span>
+                        </div>
+                        <h3>Hobbies tecnológicos</h3>
+                        <div class="skills">
+                            <span>Web3</span><span>Blockchain</span><span>Solidity</span>
+                        </div>
+                        <h3>Habilidades blandas</h3>
+                        <ul>
+                            <li>Aprendizaje continuo</li>
+                            <li>Trabajo en equipo</li>
+                            <li>Comunicación clara</li>
+                            <li>Adaptabilidad</li>
+                            <li>Resolución de problemas</li>
+                        </ul>
+                    </div>
+                    <div class="cv-right">
+                        <h3>Experiencia relevante</h3>
+                        <div class="experience-item">
+                            <h4>Jefe de Gobierno Digital</h4>
+                            <p>Ayuntamiento de Teoquixquiac | Ene 2025 – May 2025</p>
+                            <ul>
+                                <li>Capacitación en herramientas digitales a funcionarios públicos.</li>
+                                <li>Coordinación de equipos para adopción tecnológica.</li>
+                                <li>Participación en proyectos de automatización y digitalización.</li>
+                            </ul>
+                        </div>
+                        <div class="experience-item">
+                            <h4>Tecnologías y Servicios Web</h4>
+                            <p>Escuela Preparatoria Sor Juana | Ago 2023 – Nov 2023</p>
+                            <ul>
+                                <li>Implementación de plataformas ERP/SaaS.</li>
+                                <li>Gestión de ciberseguridad y redes.</li>
+                                <li>Configuración de entornos LMS.</li>
+                            </ul>
+                        </div>
+                        <div class="experience-item">
+                            <h4>Apoyo Centro de Cómputo Académico</h4>
+                            <p>UAEH Escuela Superior de Tlahuelilpan | Ene 2023 – May 2023</p>
+                            <ul>
+                                <li>Administración de software y licencias.</li>
+                                <li>Soporte técnico a docencia e investigación.</li>
+                            </ul>
+                        </div>
+                        <a href="Carlos_Navarrete_CV.pdf" class="btn btn-primary download-cv" download><i class="fas fa-download"></i> Descargar CV completo (PDF)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOG (reflexión) -->
+        <section id="blog" class="blog">
+            <div class="container">
+                <h2 class="section-title">Blog</h2>
+                <div class="blog-post">
+                    <h3>Reflexión de mi camino como desarrollador Java</h3>
+                    <p class="post-date"><i class="far fa-calendar-alt"></i> 9 de junio, 2026</p>
+                    <div class="post-content">
+                        <p>Mi trayectoria como desarrollador Java Full-Stack me ha enseñado que el código no es suficiente: la experiencia de usuario (UX/UI) es lo que realmente conecta la tecnología con las personas. Por eso, he enfocado mi aprendizaje en crear interfaces limpias, accesibles y eficientes.</p>
+                        <p>Además, siento una genuina curiosidad por la ciberseguridad web, aunque aún no tengo experiencia formal. Participar en hackathons de Web3 me ha permitido entender tecnologías descentralizadas, pero lo considero un hobby que complementa mi perfil, no mi carrera principal.</p>
+                        <p><strong>Áreas de mejora:</strong> Profundizar en microservicios con Spring Cloud, certificarme en UX/UI y obtener fundamentos sólidos en ciberseguridad web.</p>
+                        <p><strong>Metas a corto plazo:</strong> Conseguir mi primer empleo como desarrollador Java Full-Stack con enfoque en UX/UI, contribuir a proyectos open-source y seguir aprendiendo de la comunidad.</p>
+                        <p><strong>Metas a largo plazo:</strong> Convertirme en arquitecto de software con especialización en experiencia de usuario y seguridad ofensiva en aplicaciones web.</p>
+                        <p>Estoy convencido de que el aprendizaje nunca termina. Este portafolio es solo el comienzo de un viaje emocionante.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE CONTACTO ADICIONAL (hobby Web3) -->
+        <section id="hobby" class="hobby-section">
+            <div class="container">
+                <h2 class="section-title">Web3 como hobby</h2>
+                <p>Si te interesa conocer mis proyectos personales en el mundo descentralizado, puedes seguirme en:</p>
+                <div class="hobby-links">
+                    <a href="https://x.com/Carlos75076898" target="_blank"><i class="fab fa-twitter"></i> X (Twitter)</a>
+                    <a href="https://github.com/Carlos-Software-Engineer-1999" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://t.me/Carlos_Navarrete_Tapia" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+                </div>
+                <p class="hobby-note">Estas redes son exclusivas para mi exploración personal de Web3, no para contacto profesional.</p>
+            </div>
+        </section>
+
+        <footer id="contacto">
+            <div class="container">
+                <p>&copy; 2026 Carlos Navarrete Tapia. Todos los derechos reservados.</p>
+                <p>Hecho con <i class="fas fa-heart"></i> y Java.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
