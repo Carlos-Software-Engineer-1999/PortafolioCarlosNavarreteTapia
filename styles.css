@@ -1,0 +1,44 @@
+/* Sección de hobby Web3 */
+.hobby-section {
+    background: #0a0a0a;
+    padding: 3rem 0;
+    text-align: center;
+    border-top: 1px solid #00ffaa30;
+    border-bottom: 1px solid #00ffaa30;
+}
+
+.hobby-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.hobby-links a {
+    color: #00ffaa;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border: 1px solid #00ffaa;
+    padding: 0.5rem 1.2rem;
+    border-radius: 40px;
+    transition: 0.3s;
+}
+
+.hobby-links a:hover {
+    background: #00ffaa20;
+    transform: translateY(-3px);
+}
+
+.hobby-note {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 1rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
