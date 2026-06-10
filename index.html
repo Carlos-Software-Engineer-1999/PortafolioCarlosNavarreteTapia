@@ -1,43 +1,39 @@
-// Declaración del tipo de documento: HTML5.
 <!DOCTYPE html>
-// Idioma principal de la página: español.
+<!-- Declaración del tipo de documento: HTML5. -->
+<!-- Idioma principal de la página: español. -->
 <html lang="es">
-// Cabecera: metadatos, enlaces a estilos y fuentes.
 <head>
-    // Codificación de caracteres UTF-8 (permite tildes y eñes).
+    <!-- Cabecera: metadatos, enlaces a estilos y fuentes. -->
+    <!-- Codificación de caracteres UTF-8 (permite tildes y eñes). -->
     <meta charset="UTF-8">
-    // Configuración para dispositivos móviles: ancho = pantalla, escala inicial 1, usuario puede hacer zoom.
+    <!-- Configuración para dispositivos móviles: ancho = pantalla, escala inicial 1, usuario puede hacer zoom. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    // Título de la pestaña del navegador. Importante para SEO.
+    <!-- Título de la pestaña del navegador. Importante para SEO. -->
     <title>Carlos Navarrete | Software Engineer | Java Full-Stack</title>
-    // Comentario: indicamos que vamos a cargar fuentes e íconos.
-    <!-- Google Fonts + Font Awesome -->
-    // Carga las fuentes Poppins (texto general) y Fira Code (código) desde Google Fonts.
+    <!-- Carga las fuentes Poppins (texto general) y Fira Code (código) desde Google Fonts. -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    // Carga la librería de íconos Font Awesome (versión 6).
+    <!-- Carga la librería de íconos Font Awesome (versión 6). -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    // Carga tu archivo CSS local (estilos personalizados).
+    <!-- Carga tu archivo CSS local (estilos personalizados). -->
     <link rel="stylesheet" href="styles.css">
 </head>
-// Cuerpo de la página: todo lo visible.
 <body>
 
-    // Barra de navegación fija.
+    <!-- ==================== BARRA DE NAVEGACIÓN (FIJA) ==================== -->
     <nav class="navbar">
-        // Contenedor interno para centrar y alinear.
         <div class="nav-container">
-            // Logotipo (muestra "<C.N.T/>" como código).
+            <!-- Logotipo (muestra "<C.N.T/>" como código). -->
             <a href="#" class="logo">&lt;C.N.T/&gt;</a>
-            // Lista de enlaces del menú principal.
+            <!-- Lista de enlaces del menú principal. -->
             <ul class="nav-menu">
-                // Cada enlace apunta a una sección con su id (#inicio, etc.).
+                <!-- Cada enlace apunta a una sección con su id (#inicio, etc.). -->
                 <li><a href="#inicio" class="nav-link">Inicio</a></li>
                 <li><a href="#portafolio" class="nav-link">Portafolio</a></li>
                 <li><a href="#acerca" class="nav-link">Acerca</a></li>
                 <li><a href="#cv" class="nav-link">CV</a></li>
                 <li><a href="#blog" class="nav-link">Blog</a></li>
             </ul>
-            // Ícono de menú hamburguesa para móviles (tres barras).
+            <!-- Ícono de menú hamburguesa para móviles (tres barras). -->
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -46,29 +42,30 @@
         </div>
     </nav>
 
-    // Contenido principal de la página.
+    <!-- ==================== CONTENIDO PRINCIPAL ==================== -->
     <main>
-        // Sección HERO (bienvenida, presentación).
+
+        <!-- ==================== SECCIÓN HERO (BIENVENIDA) ==================== -->
         <section id="inicio" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    // Insignia con el rol profesional.
+                    <!-- Insignia con el rol profesional. -->
                     <span class="badge">Java Full-Stack Developer</span>
-                    // Nombre completo.
+                    <!-- Nombre completo. -->
                     <h1>Carlos Navarrete Tapia</h1>
-                    // Frase que describe tu enfoque.
+                    <!-- Frase que describe tu enfoque. -->
                     <p class="tagline">Construyo soluciones web escalables con enfoque en UX/UI y código limpio.</p>
-                    // Botones de acción.
+                    <!-- Botones de acción. -->
                     <div class="hero-buttons">
-                        // Botón primario: lleva a la sección portafolio.
+                        <!-- Botón primario: lleva a la sección portafolio. -->
                         <a href="#portafolio" class="btn btn-primary">Ver proyectos <i class="fas fa-arrow-right"></i></a>
-                        // Botón secundario: lleva al footer (contacto).
+                        <!-- Botón secundario: lleva al footer (contacto). -->
                         <a href="#contacto" class="btn btn-secondary">Contacto <i class="fas fa-envelope"></i></a>
                     </div>
-                    // Información de contacto (solo correo, el teléfono se eliminó por privacidad).
+                    <!-- Información de contacto (solo correo, el teléfono se eliminó por privacidad). -->
                     <div class="hero-contact">
                         <p><i class="fas fa-envelope"></i> navarreteatapiacarlos@gmail.com</p>
-                        // Enlaces a redes profesionales.
+                        <!-- Enlaces a redes profesionales. -->
                         <div class="social-links">
                             <a href="https://github.com/Carlos-Software-Engineer-1999" target="_blank"><i class="fab fa-github"></i></a>
                             <a href="https://www.linkedin.com/in/carlos-navarrete-tapia-6367a133a/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -76,28 +73,28 @@
                         </div>
                     </div>
                 </div>
-                // Bloque de código estilo terminal.
+                <!-- Bloque de código estilo terminal. -->
                 <div class="hero-code">
                     <pre><code>System.out.println("Hello, World!");</code></pre>
                 </div>
             </div>
         </section>
 
-        // Sección de la foto personal (debajo del hero).
+        <!-- ==================== SECCIÓN DE LA FOTO PERSONAL ==================== -->
         <section class="personal-photo">
             <div class="container">
-                // Tarjeta con efecto glassmorphism.
+                <!-- Tarjeta con efecto glassmorphism. -->
                 <div class="photo-card">
-                    // Marco circular para la foto.
+                    <!-- Marco circular para la foto. -->
                     <div class="photo-frame">
-                        // Imagen de perfil (ruta relativa).
+                        <!-- Imagen de perfil (ruta relativa). -->
                         <img src="./mi-foto.jpeg" alt="Carlos Navarrete Tapia - foto profesional" class="profile-img">
                     </div>
-                    // Texto junto a la foto.
+                    <!-- Texto junto a la foto. -->
                     <div class="photo-caption">
                         <h3>Carlos Navarrete Tapia</h3>
                         <p>Software Engineer | Apasionado por el diseño UX/UI y el código bien estructurado.</p>
-                        // Redes nuevamente (refuerzo visual).
+                        <!-- Redes nuevamente (refuerzo visual). -->
                         <div class="photo-social">
                             <a href="https://github.com/Carlos-Software-Engineer-1999" target="_blank"><i class="fab fa-github"></i></a>
                             <a href="https://www.linkedin.com/in/carlos-navarrete-tapia-6367a133a/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -108,17 +105,17 @@
             </div>
         </section>
 
-        // Sección de portafolio (proyectos destacados).
+        <!-- ==================== SECCIÓN DE PORTAFOLIO (PROYECTOS DESTACADOS) ==================== -->
         <section id="portafolio" class="portfolio">
             <div class="container">
-                // Título de la sección.
+                <!-- Título de la sección. -->
                 <h2 class="section-title">Proyectos destacados</h2>
-                // Subtítulo explicativo.
+                <!-- Subtítulo explicativo. -->
                 <p class="section-subtitle">Mis proyectos profesionales combinan desarrollo Java Full-Stack con un fuerte enfoque en UX/UI. Adicionalmente, exploro tecnologías descentralizadas como Web3 y blockchain.</p>
-                // Contenedor en cuadrícula para las tarjetas de proyecto.
+                <!-- Contenedor en cuadrícula para las tarjetas de proyecto. -->
                 <div class="projects-grid">
 
-                    // Tarjeta del proyecto "Mundo Entre Libros".
+                    <!-- Tarjeta del proyecto "Mundo Entre Libros". -->
                     <div class="project-card">
                         <div class="project-img"><img src="proyecto1.jpg" alt="Mundo Entre Libros" onerror="this.src='https://placehold.co/600x400/1a1a1a/00ffaa?text=Mundo+Entre+Libros'"></div>
                         <div class="project-info">
@@ -132,7 +129,7 @@
                         </div>
                     </div>
 
-                    // Tarjeta del proyecto "Orbe – Remesas Web3".
+                    <!-- Tarjeta del proyecto "Orbe – Remesas Web3". -->
                     <div class="project-card">
                         <div class="project-img"><img src="proyecto2.jpg" alt="Orbe" onerror="this.src='https://placehold.co/600x400/1a1a1a/00ccff?text=Orbe'"></div>
                         <div class="project-info">
@@ -146,7 +143,7 @@
                         </div>
                     </div>
 
-                    // Tarjeta del proyecto "Eco Eeelien".
+                    <!-- Tarjeta del proyecto "Eco Eeelien". -->
                     <div class="project-card">
                         <div class="project-img"><img src="proyecto3.jpg" alt="Eco Eeelien" onerror="this.src='https://placehold.co/600x400/1a1a1a/00ffaa?text=Eco+Eeelien'"></div>
                         <div class="project-info">
@@ -160,7 +157,7 @@
                         </div>
                     </div>
 
-                    // Tarjeta del proyecto "Carechain".
+                    <!-- Tarjeta del proyecto "Carechain". -->
                     <div class="project-card">
                         <div class="project-img"><img src="proyecto4.jpg" alt="Carechain" onerror="this.src='https://placehold.co/600x400/1a1a1a/ffaa00?text=Carechain'"></div>
                         <div class="project-info">
@@ -178,7 +175,7 @@
             </div>
         </section>
 
-        // Sección "Acerca de mí".
+        <!-- ==================== SECCIÓN "ACERCA DE MÍ" ==================== -->
         <section id="acerca" class="about">
             <div class="container">
                 <h2 class="section-title">Acerca de mí</h2>
@@ -187,7 +184,7 @@
                         <p>Soy Ingeniero de Software egresado de la UAEH, actualmente especializándome como desarrollador Java Full Stack en Generation México. Mi enfoque profesional se centra en el <strong>desarrollo web con énfasis en UX/UI</strong>, creando interfaces intuitivas y eficientes. Para mí, el diseño UX/UI no es un añadido, sino el puente que conecta la lógica del back-end con una experiencia de usuario excepcional.</p>
                         <p>Además, tengo una curiosidad profesional por la <strong>ciberseguridad web</strong> (en constante aprendizaje). También exploro tecnologías descentralizadas como <strong>Web3 y blockchain</strong> como un interés personal que amplía mi perspectiva tecnológica.</p>
                     </div>
-                    // Estadísticas rápidas (tarjetas).
+                    <!-- Estadísticas rápidas (tarjetas). -->
                     <div class="about-stats">
                         <div class="stat"><span>+4</span> Proyectos destacados</div>
                         <div class="stat"><span>3</span> Hackathons internacionales</div>
@@ -197,12 +194,12 @@
             </div>
         </section>
 
-        // Sección CV (currículum).
+        <!-- ==================== SECCIÓN CURRÍCULUM VITAE (CV) ==================== -->
         <section id="cv" class="cv">
             <div class="container">
                 <h2 class="section-title">Curriculum Vitae</h2>
                 <div class="cv-grid">
-                    // Columna izquierda: habilidades técnicas y blandas.
+                    <!-- Columna izquierda: habilidades técnicas y blandas. -->
                     <div class="cv-left">
                         <h3>Habilidades técnicas (profesionales)</h3>
                         <div class="skills">
@@ -231,7 +228,7 @@
                             <li>Resolución de problemas</li>
                         </ul>
                     </div>
-                    // Columna derecha: experiencia laboral.
+                    <!-- Columna derecha: experiencia laboral. -->
                     <div class="cv-right">
                         <h3>Experiencia relevante</h3>
                         <div class="experience-item">
@@ -260,14 +257,14 @@
                                 <li>Soporte técnico a docencia e investigación.</li>
                             </ul>
                         </div>
-                        // Botón para descargar CV en PDF.
+                        <!-- Botón para descargar CV en PDF. -->
                         <a href="Carlos_Navarrete_CV.pdf" class="btn btn-primary download-cv" download><i class="fas fa-download"></i> Descargar CV completo (PDF)</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        // Sección Blog (reflexión personal).
+        <!-- ==================== SECCIÓN BLOG (REFLEXIÓN PERSONAL) ==================== -->
         <section id="blog" class="blog">
             <div class="container">
                 <h2 class="section-title">Blog</h2>
@@ -286,7 +283,7 @@
             </div>
         </section>
 
-        // Sección Web3 (interés personal, redes adicionales).
+        <!-- ==================== SECCIÓN WEB3 (INTERÉS PERSONAL, REDES ADICIONALES) ==================== -->
         <section id="web3" class="web3-section">
             <div class="container">
                 <h2 class="section-title">Web3</h2>
@@ -300,15 +297,16 @@
             </div>
         </section>
 
-        // Pie de página con copyright.
+        <!-- ==================== PIE DE PÁGINA (FOOTER) ==================== -->
         <footer id="contacto">
             <div class="container">
                 <p>&copy; 2026 Carlos Navarrete Tapia. Todos los derechos reservados.</p>
             </div>
         </footer>
+
     </main>
 
-    // Carga del archivo JavaScript (funcionalidad del menú hamburguesa, scroll suave, etc.).
+    <!-- Carga del archivo JavaScript (funcionalidad del menú hamburguesa, scroll suave, etc.). -->
     <script src="script.js"></script>
 </body>
 </html>
