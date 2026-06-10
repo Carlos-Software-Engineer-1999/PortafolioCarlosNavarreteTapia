@@ -1,123 +1,110 @@
-// RESETEO DE ESTILOS POR DEFECTO DEL NAVEGADOR
-// Elimina márgenes, rellenos y hace que el ancho incluya bordes y rellenos.
+/* ===== RESET & GLOBAL ===== */
 * {
-    margin: 0;           // Quita margen exterior a todos los elementos.
-    padding: 0;          // Quita relleno interior a todos los elementos.
-    box-sizing: border-box; // El ancho total incluye border y padding, no se desborda.
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-// ESTILOS GENERALES DEL CUERPO DE LA PÁGINA
 body {
-    font-family: 'Poppins', sans-serif;  // Fuente principal: Poppins (cargada desde Google Fonts).
-    background-color: #0a0a0a;           // Fondo casi negro (#0a0a0a).
-    color: #e0e0e0;                      // Texto gris claro (casi blanco).
-    line-height: 1.6;                    // Altura de línea: 1.6 veces el tamaño de la fuente (legible).
-    scroll-behavior: smooth;             // Desplazamiento suave al hacer clic en enlaces internos.
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
-// CONTENEDOR PRINCIPAL PARA CENTRAR Y LIMITAR EL ANCHO
 .container {
-    max-width: 1200px;    // Ancho máximo de 1200 píxeles.
-    margin: 0 auto;       // Centrado horizontal (auto en izquierda y derecha).
-    padding: 0 20px;      // Relleno lateral de 20px para que no pegue a los bordes en móviles.
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-// TIPOGRAFÍA PARA TÍTULOS (h1, h2, h3, h4)
+/* ===== TIPOGRAFÍA ===== */
 h1, h2, h3, h4 {
-    font-weight: 700;           // Negrita (peso 700).
-    letter-spacing: -0.5px;     // Espaciado entre letras ligeramente reducido (efecto moderno).
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
-// ESTILO ESPECIAL PARA EL TÍTULO PRINCIPAL (h1)
 h1 {
-    font-size: 3.5rem;          // Tamaño grande (3.5 veces la fuente base del navegador).
-    background: linear-gradient(135deg, #00ffaa, #00ccff); // Degradado diagonal de verde neón a cian.
-    -webkit-background-clip: text;  // Recorta el fondo al texto (para navegadores WebKit).
-    background-clip: text;          // Estándar: el fondo solo se muestra donde hay texto.
-    color: transparent;             // Hace que el texto sea transparente para ver el degradado.
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, #00ffaa, #00ccff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-// TÍTULOS DE SECCIÓN (como "Proyectos destacados")
 .section-title {
-    font-size: 2.5rem;          // Tamaño grande pero menor que h1.
-    text-align: center;         // Centrado.
-    margin-bottom: 3rem;        // Margen inferior para separar del contenido siguiente.
-    position: relative;         // Para poder posicionar la línea decorativa (::after).
-    display: inline-block;      // Para que la línea decorativa se centre con respecto al ancho del texto.
-    width: 100%;                // Ocupa todo el ancho del contenedor, permitiendo centrar el inline-block.
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    width: 100%;
 }
 
-// LÍNEA DECORATIVA DEBAJO DEL TÍTULO DE SECCIÓN
 .section-title::after {
-    content: '';                // Crea un elemento pseudo vacío.
-    position: absolute;         // Se posiciona relativamente al .section-title.
-    bottom: -10px;              // A 10px por debajo del título.
-    left: 50%;                  // Lo mueve al 50% del ancho del contenedor.
-    transform: translateX(-50%); // Lo centra exactamente (desplaza hacia la izquierda la mitad de su ancho).
-    width: 80px;                // Ancho de 80 píxeles.
-    height: 3px;                // Alto de 3 píxeles.
-    background: linear-gradient(90deg, #00ffaa, #00ccff); // Degradado horizontal.
-    border-radius: 3px;         // Bordes redondeados (pequeño).
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #00ffaa, #00ccff);
+    border-radius: 3px;
 }
 
-// BARRA DE NAVEGACIÓN FIJA (Efecto vidrio)
+/* ===== NAVBAR (efecto vidrio) ===== */
 .navbar {
-    background: rgba(10, 10, 10, 0.95); // Fondo negro con 95% de opacidad.
-    backdrop-filter: blur(10px);        // Desenfoque del fondo detrás de la barra (efecto cristal).
-    position: fixed;                   // Fija la barra en la parte superior al hacer scroll.
-    width: 100%;                       // Ocupa todo el ancho.
-    top: 0;                            // Pegada arriba.
-    z-index: 1000;                     // Se superpone a otros elementos (muy alta).
-    border-bottom: 1px solid rgba(0, 255, 170, 0.2); // Borde inferior tenue verde.
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 255, 170, 0.2);
 }
 
-// CONTENEDOR INTERNO DE LA BARRA
 .nav-container {
-    display: flex;               // Usa flexbox.
-    justify-content: space-between; // Espacia elementos: logo a la izquierda, menú a la derecha.
-    align-items: center;         // Centra verticalmente.
-    padding: 1rem 2rem;          // Relleno: arriba/abajo 1rem, laterales 2rem.
-    max-width: 1200px;           // Mismo ancho máximo que .container.
-    margin: 0 auto;              // Centrado.
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-// LOGOTIPO (texto con &lt;C.N.T/&gt;)
 .logo {
-    font-family: 'Fira Code', monospace; // Fuente monoespaciada estilo código.
-    font-size: 1.8rem;                  // Tamaño grande.
-    font-weight: 700;                   // Negrita.
-    color: #00ffaa;                     // Color verde neón.
-    text-decoration: none;              // Sin subrayado.
-    letter-spacing: -1px;               // Espaciado reducido.
+    font-family: 'Fira Code', monospace;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #00ffaa;
+    text-decoration: none;
+    letter-spacing: -1px;
 }
 
-// LISTA DEL MENÚ
 .nav-menu {
-    display: flex;          // Elementos en línea horizontal.
-    list-style: none;       // Quita viñetas.
-    gap: 2rem;              // Espacio entre cada enlace.
+    display: flex;
+    list-style: none;
+    gap: 2rem;
 }
 
-// ENLACES DEL MENÚ
 .nav-link {
-    color: #e0e0e0;         // Color gris claro.
-    text-decoration: none;  // Sin subrayado.
-    font-weight: 500;       // Seminegrita.
-    transition: 0.3s;       // Transición suave para cambios de color.
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-// EFECTO HOVER (al pasar el ratón) EN ENLACES
 .nav-link:hover {
-    color: #00ffaa;         // Cambia a verde neón.
+    color: #00ffaa;
 }
 
-// ÍCONO DE HAMBURGUESA (oculto en escritorio, visible en móvil)
 .hamburger {
-    display: none;          // No se muestra por defecto.
-    cursor: pointer;        // Manita al pasar.
+    display: none;
+    cursor: pointer;
 }
 
-// CADA UNA DE LAS TRES BARRAS DEL MENÚ HAMBURGUESA
 .bar {
     display: block;
     width: 25px;
@@ -127,50 +114,45 @@ h1 {
     transition: 0.3s;
 }
 
-// SECCIÓN HERO (PORTADA)
+/* ===== HERO (PORTADA) estilo terminal ===== */
 .hero {
-    min-height: 100vh;                  // Altura mínima de toda la pantalla.
-    display: flex;                      // Flexbox.
-    align-items: center;                // Centra verticalmente.
-    background: radial-gradient(circle at 10% 20%, rgba(0, 255, 170, 0.05), #0a0a0a); // Degradado radial sutil.
-    padding-top: 80px;                  // Espacio superior para que no quede oculto bajo la navbar.
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at 10% 20%, rgba(0, 255, 170, 0.05), #0a0a0a);
+    padding-top: 80px;
 }
 
-// CONTENEDOR DENTRO DE HERO
 .hero .container {
     display: flex;
-    justify-content: space-between; // Espacia contenido textual y bloque de código.
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;                // Permite que en móvil se apilen.
+    flex-wrap: wrap;
     gap: 2rem;
 }
 
-// CAJA DEL TEXTO PRINCIPAL EN HERO
 .hero-content {
-    flex: 1;          // Ocupa todo el espacio disponible proporcionalmente.
+    flex: 1;
 }
 
-// INSIGNIA (Java Full-Stack Developer)
 .badge {
-    background: rgba(0, 255, 170, 0.2); // Fondo verde tenue translúcido.
-    color: #00ffaa;                     // Texto verde neón.
+    background: rgba(0, 255, 170, 0.2);
+    color: #00ffaa;
     padding: 0.3rem 1rem;
-    border-radius: 30px;                // Bordes muy redondeados (píldora).
+    border-radius: 30px;
     font-size: 0.8rem;
     font-weight: 600;
     display: inline-block;
     margin-bottom: 1rem;
-    border: 1px solid rgba(0, 255, 170, 0.5); // Borde verde suave.
+    border: 1px solid rgba(0, 255, 170, 0.5);
 }
 
-// FRASE DESTACADA (tagline)
 .tagline {
     font-size: 1.2rem;
     margin: 1rem 0;
-    color: #b0b0b0;   // Gris un poco más oscuro que el texto normal.
+    color: #b0b0b0;
 }
 
-// CONTENEDOR DE BOTONES
 .hero-buttons {
     margin: 2rem 0;
     display: flex;
@@ -178,44 +160,38 @@ h1 {
     flex-wrap: wrap;
 }
 
-// ESTILO BASE PARA CUALQUIER BOTÓN
 .btn {
     padding: 0.8rem 1.8rem;
-    border-radius: 40px;      // Muy redondeado.
+    border-radius: 40px;
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s;
-    display: inline-flex;     // Para alinear texto e ícono.
+    display: inline-flex;
     align-items: center;
     gap: 8px;
 }
 
-// BOTÓN PRIMARIO (ver proyectos)
 .btn-primary {
     background: linear-gradient(135deg, #00ffaa, #00ccff);
-    color: #0a0a0a;           // Texto negro.
+    color: #0a0a0a;
     border: none;
 }
 
-// EFECTO HOVER BOTÓN PRIMARIO
 .btn-primary:hover {
-    transform: translateY(-3px);   // Se eleva ligeramente.
-    box-shadow: 0 10px 20px rgba(0, 255, 170, 0.3); // Sombra verde neón.
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 255, 170, 0.3);
 }
 
-// BOTÓN SECUNDARIO (contacto)
 .btn-secondary {
     background: transparent;
     border: 1px solid #00ffaa;
     color: #00ffaa;
 }
 
-// EFECTO HOVER BOTÓN SECUNDARIO
 .btn-secondary:hover {
-    background: #00ffaa20;   // Fondo verde muy tenue.
+    background: #00ffaa20;
 }
 
-// CONTACTO (correo)
 .hero-contact {
     margin-top: 1rem;
     font-size: 0.9rem;
@@ -225,7 +201,6 @@ h1 {
     margin: 0.5rem 0;
 }
 
-// ENLACES DE REDES SOCIALES
 .social-links {
     margin-top: 1rem;
     display: flex;
@@ -242,7 +217,6 @@ h1 {
     color: #00ffaa;
 }
 
-// BLOQUE DE CÓDIGO (estilo terminal)
 .hero-code {
     flex: 1;
     background: #111;
@@ -251,28 +225,27 @@ h1 {
     border-left: 4px solid #00ffaa;
     font-family: 'Fira Code', monospace;
     font-size: 0.9rem;
-    overflow-x: auto;   // Permite scroll horizontal si el código es muy largo.
+    overflow-x: auto;
 }
 
 .hero-code code {
     color: #00ffaa;
 }
 
-// SECCIÓN FOTO PERSONAL
+/* ===== FOTO PERSONAL ===== */
 .personal-photo {
     padding: 3rem 0 2rem 0;
-    background: linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 100%); // Degradado vertical descendente.
+    background: linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 100%);
 }
 
-// TARJETA DE LA FOTO
 .photo-card {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
-    background: rgba(20, 20, 30, 0.6); // Fondo semitransparente oscuro.
-    backdrop-filter: blur(8px);        // Efecto vidrio.
+    background: rgba(20, 20, 30, 0.6);
+    backdrop-filter: blur(8px);
     border-radius: 32px;
     padding: 2rem;
     border: 1px solid rgba(0, 255, 170, 0.3);
@@ -285,13 +258,12 @@ h1 {
     border-color: #00ffaa;
 }
 
-// MARCO CIRCULAR DE LA FOTO
 .photo-frame {
-    flex-shrink: 0;           // Evita que se encoja.
+    flex-shrink: 0;
     width: 220px;
     height: 220px;
-    border-radius: 50%;       // Circular.
-    overflow: hidden;         // Oculta lo que sobresale.
+    border-radius: 50%;
+    overflow: hidden;
     border: 3px solid #00ffaa;
     box-shadow: 0 0 20px rgba(0, 255, 170, 0.5);
     transition: 0.3s;
@@ -302,15 +274,13 @@ h1 {
     box-shadow: 0 0 30px #00ffaa;
 }
 
-// IMAGEN DENTRO DEL MARCO
 .profile-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;    // Ajusta la imagen para que cubra el marco sin deformarse.
+    object-fit: cover;
     display: block;
 }
 
-// TEXTO AL LADO DE LA FOTO
 .photo-caption {
     max-width: 400px;
     text-align: center;
@@ -330,7 +300,6 @@ h1 {
     margin-bottom: 1rem;
 }
 
-// REDES SOCIALES DENTRO DE LA TARJETA
 .photo-social {
     display: flex;
     gap: 1.2rem;
@@ -348,20 +317,18 @@ h1 {
     transform: translateY(-3px);
 }
 
-// SECCIÓN DE PORTAFOLIO (PROYECTOS)
+/* ===== PROYECTOS ===== */
 .portfolio {
     padding: 6rem 0;
     background: #0a0a0a;
 }
 
-// CUADRÍCULA DE PROYECTOS
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); // Columnas flexibles: mínimo 320px.
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
 }
 
-// TARJETA DE PROYECTO INDIVIDUAL
 .project-card {
     background: rgba(20, 20, 30, 0.7);
     backdrop-filter: blur(5px);
@@ -377,7 +344,6 @@ h1 {
     border-color: #00ffaa;
 }
 
-// CONTENEDOR DE LA IMAGEN DEL PROYECTO
 .project-img img {
     width: 100%;
     height: 200px;
@@ -385,7 +351,6 @@ h1 {
     display: block;
 }
 
-// INFORMACIÓN DEL PROYECTO
 .project-info {
     padding: 1.5rem;
 }
@@ -395,7 +360,6 @@ h1 {
     margin-bottom: 0.5rem;
 }
 
-// TECNOLOGÍAS USADAS (etiquetas)
 .tech-stack {
     margin: 0.8rem 0;
     display: flex;
@@ -411,7 +375,6 @@ h1 {
     color: #00ffaa;
 }
 
-// ENLACES DEL PROYECTO (Demo, Código)
 .project-links {
     display: flex;
     gap: 1rem;
@@ -431,7 +394,7 @@ h1 {
     color: #00ffaa;
 }
 
-// SECCIÓN "ACERCA DE MÍ"
+/* ===== ABOUT ===== */
 .about {
     padding: 6rem 0;
     background: #0f0f0f;
@@ -469,14 +432,14 @@ h1 {
     display: block;
 }
 
-// SECCIÓN CV
+/* ===== CV ===== */
 .cv {
     padding: 6rem 0;
 }
 
 .cv-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;  // Dos columnas: izquierda más pequeña, derecha más grande.
+    grid-template-columns: 1fr 1.5fr;
     gap: 2rem;
 }
 
@@ -517,7 +480,7 @@ h1 {
     margin-top: 1.5rem;
 }
 
-// BLOG
+/* ===== BLOG ===== */
 .blog {
     padding: 6rem 0;
     background: #0f0f0f;
@@ -539,7 +502,7 @@ h1 {
     margin-bottom: 1rem;
 }
 
-// SECCIÓN WEB3
+/* ===== SECCIÓN WEB3 ===== */
 .web3-section {
     background: #0a0a0a;
     padding: 3rem 0;
@@ -584,7 +547,7 @@ h1 {
     font-size: 0.95rem;
 }
 
-// FOOTER (PIE DE PÁGINA)
+/* ===== FOOTER ===== */
 footer {
     background: #050505;
     text-align: center;
@@ -592,16 +555,16 @@ footer {
     border-top: 1px solid #00ffaa20;
 }
 
-// ESTILOS RESPONSIVOS (para pantallas de hasta 768px de ancho)
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .hamburger {
-        display: block;          // Muestra el ícono de hamburguesa.
+        display: block;
     }
     .nav-menu {
         position: fixed;
-        left: -100%;            // Oculta el menú fuera de la pantalla (izquierda).
+        left: -100%;
         top: 70px;
-        flex-direction: column; // Los enlaces se apilan verticalmente.
+        flex-direction: column;
         background: #0a0a0a;
         width: 100%;
         text-align: center;
@@ -610,14 +573,14 @@ footer {
         padding: 1rem 0;
     }
     .nav-menu.active {
-        left: 0;               // Cuando se activa, se muestra deslizando.
+        left: 0;
     }
     .nav-link {
         padding: 1rem;
         display: block;
     }
     .hero .container {
-        flex-direction: column; // El hero se apila (texto arriba, código abajo).
+        flex-direction: column;
         text-align: center;
     }
     .hero-buttons {
@@ -627,7 +590,7 @@ footer {
         width: 100%;
     }
     .cv-grid {
-        grid-template-columns: 1fr; // El CV se convierte en una sola columna.
+        grid-template-columns: 1fr;
     }
     .section-title {
         font-size: 2rem;
